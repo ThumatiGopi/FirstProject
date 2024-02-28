@@ -3,39 +3,43 @@
 
 int main(void)
 {
-    int arr[10];
+    int n;
+    printf("Enter the size of the Array: ");
+    scanf("%d", &n);
 
-    input(arr);
+    int arr[n];
 
-    print(arr);
+    input(arr, n);
 
-    max(arr);
+    print(arr, n);
 
-    min(arr);
+    max(arr, n);
+
+    min(arr, n);
 }
 
-void max(int arr[])
+void max(int arr[], int size)
 {
-    for (int i = 0; i < 9; i++)
+    for (int i = 0; i < size-1; i++)
     {
         if (*(arr + i) > *(arr + i + 1))
         {
             swap((arr+i), (arr+i+1));
         }
     }
-    printf("max = %i\n\n", *(arr + 9));
+    printf("max = %i\n\n", *(arr + size-1));
 }
 
-void min(int arr[])
+void min(int arr[], int size)
 {
-    for (int i = 0; i < 9; i++)
+    for (int i = 0; i < size-1; i++)
     {
         if (*(arr + i) < *(arr + i + 1))
         {
             swap((arr+i), (arr+i+1));
         }
     }
-    printf("min = %i\n\n", *(arr + 9));
+    printf("min = %i\n\n", *(arr + size-1));
 }
 
 void swap(int *a, int *b)
@@ -45,18 +49,18 @@ void swap(int *a, int *b)
     *b = temp;
 }
 
-void print(int arr[])
+void print(int arr[], int size)
 {
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < size; i++)
     {
         printf("arr[%i] = %i\n", i, arr[i]);
     }
     printf("\n");
 }
 
-void input(int arr[])
+void input(int arr[], int size)
 {
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < size; i++)
     {
         printf("arr[%i] = ", i);
         scanf("%i", &arr[i]);

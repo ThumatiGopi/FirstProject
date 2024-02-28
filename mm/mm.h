@@ -1,6 +1,6 @@
 #pragma once
-void print(int arr[]);
-void input(int arr[]);
+void print(int arr[], int size);
+void input(int arr[], int size);
 void swap(int *a, int *b);
-void max(int arr[]);
-void min(int arr[]);
+void max(int arr[], int size);
+void min(int arr[], int size);
